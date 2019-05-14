@@ -1,0 +1,107 @@
+{
+    "meta" : {
+        "label" : "scraping google image",
+        "description" : "Custom recipe which allow user to scraping images from google images website",
+        "icon" : "icon-cloud-download"
+    },
+
+    "kind" : "PYTHON",
+
+    "outputRoles" : [
+        {
+            "name": "images_folder",
+            "label": "main output displayed name",
+            "description": "what main output means",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": false,
+            "acceptsManagedFolder": true
+        },
+        {
+            "name": "errors_output",
+            "label": "errors output displayed name",
+            "description": "what errors output means",
+            "arity": "UNARY",
+            "required": false,
+            "acceptsDataset": true
+        }
+    ],
+
+    "params": [
+        {
+            "name": "keywords",
+            "label" : "Keywords",
+            "type": "STRING",
+            "description":"coma separated values",
+            "mandatory" : false
+        },
+        {
+            "name": "limit",
+            "label": "Number max of image",
+            "type": "INT",
+            "description": "20 by default",
+            "mandatory": false
+        },
+        {
+            "name": "format",
+            "label": "Filter by images format",
+            "type": "SELECT",
+            "mandatory": false,
+            "defaultValue": "jpg",
+            "selectChoices": [
+                {
+                    "value": "jpg",
+                    "label": "jpg"
+                },
+                {
+                    "value": "gif",
+                    "label": "gif"
+                },
+                {
+                    "value": "png",
+                    "label": "png"
+                },
+                {
+                    "value": "bmp",
+                    "label": "bmp"
+                },
+                {
+                    "value": "svg",
+                    "label": "svg"
+                },
+                {
+                    "value": "webp",
+                    "label": "webp"
+                },
+                {
+                    "value": "ico",
+                    "label": "ico"
+                }
+            ]
+        },
+        {
+            "name": "color_type",
+            "label": "Color type",
+            "type": "SELECT",
+            "mandatory": false,
+            "defaultValue": "full-Color",
+            "selectChoices": [
+                {
+                    "value": "full-color",
+                    "label": "Color"
+                },
+                {
+                    "value": "black-and-white",
+                    "label": "grayscale"
+                },
+                {
+                    "value": "transparent",
+                    "label": "transparent"
+                }
+            ]
+        }
+    ],
+
+    "resourceKeys" : []
+
+}
